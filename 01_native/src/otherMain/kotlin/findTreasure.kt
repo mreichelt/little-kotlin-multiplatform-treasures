@@ -1,0 +1,3 @@
+actual fun findTreasure() {
+    // no treasures here...
+}

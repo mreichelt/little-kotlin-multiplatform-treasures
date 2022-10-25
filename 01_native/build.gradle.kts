@@ -28,4 +28,25 @@ kotlin {
             baseName = "shared"
         }
     }
+
+    sourceSets {
+        val commonMain by sourceSets.getting
+
+        val otherMain by creating {
+            val otherMainRef = this
+            dependsOn(commonMain)
+            listOf(
+                "macosX64Main",
+                "macosArm64Main",
+                "mingwX64Main",
+                "jsMain",
+                "iosX64Main",
+                "iosArm64Main",
+                "iosSimulatorArm64Main",
+            ).forEach { sourceSetName ->
+                get(sourceSetName).dependsOn(otherMainRef)
+            }
+        }
+
+    }
 }
