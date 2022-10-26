@@ -8,6 +8,8 @@ fun main() {
 
     val distanceKm = distance(droidconLondon, frankfurt) / 1000.0
     println("The distance between us and Frankfurt is ${distanceKm.roundToInt()} km")
+
+    findTreasure()
 }
 
 data class Location(val latitude: Double, val longitude: Double)
