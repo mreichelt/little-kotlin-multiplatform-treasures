@@ -23,7 +23,7 @@ configure(projectsToPublish) {
                     name = "droidconrepo"
                     url = uri("http://localhost:8081/artifactory/droidcon-maven")
                     credentials {
-                        username = "droidcon"
+                        username = System.getenv("DROIDCON_USERNAME") ?: ""
                         password = System.getenv("DROIDCON_PASSWORD") ?: ""
                     }
                     isAllowInsecureProtocol = true
