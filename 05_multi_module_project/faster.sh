@@ -11,12 +11,12 @@ pushd ..
 ./gradlew 05:clean 05:check
 
 # but you can have a much faster feedback loop:
+./gradlew 05:clean 05:jvmTest                 # run just JVM tests
+./gradlew 05:clean 05:jsTest                  # run just JS tests
+./gradlew 05:clean 05:iosSimulatorArm64Test   # run just iOS tests (but only re-compiles 1 target)
+
+# or if you want builds only, not tests:
 ./gradlew 05:clean 05:jvmJar                          # compile just JVM stuff
 ./gradlew 05:clean 05:compileKotlinIosSimulatorArm64  # compile just iOS stuff (1 target)
-
-# also for tests:
-./gradlew 05:clean 05:jvmTest                 # only run JVM tests
-./gradlew 05:clean 05:jsTest                  # only run JS tests
-./gradlew 05:clean 05:iosSimulatorArm64Test   # runs iOS tests (but only re-compiles 1 target)
 
 popd
